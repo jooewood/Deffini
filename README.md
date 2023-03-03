@@ -1,5 +1,5 @@
 
-# This is a pure and scalable PyTorch verison of Fernie
+# deffini: a family-specific deep neural network model for structure-based virtual screening
 ![](class_diagram.png)
 
 # Usage
