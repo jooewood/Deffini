@@ -1,5 +1,6 @@
 
-# deffini: a family-specific deep neural network model for structure-based virtual screening
+# Deffini: a family-specific deep neural network model for structure-based virtual screening
+
 ![](class_diagram.png)
 
 # Usage
