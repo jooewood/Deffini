@@ -1,45 +1,5 @@
 
-# 1. A deep neural-network model for structure-based virtual screening for kinases
-
-- [1. A deep neural-network model for structure-based virtual screening for kinases](#1-a-deep-neural-network-model-for-structure-based-virtual-screening-for-kinases)
-  - [1.1. Data](#11-data)
-  - [1.2. Prerequisites](#12-prerequisites)
-  - [1.3. Procedures](#13-procedures)
-    - [1.3.1. Preprocessing](#131-preprocessing)
-    - [1.3.2. Use CD-HIT to cluster the protein targets based on their sequence similarity.](#132-use-cd-hit-to-cluster-the-protein-targets-based-on-their-sequence-similarity)
-    - [1.3.3. Cross-validation](#133-cross-validation)
-    - [1.3.4. Independent test or external validation.](#134-independent-test-or-external-validation)
-
-## 1.1. Data
-
-Project folder including data is at /y/Fernie/.
-
-/y/Fernie/kinase_project/data.
-* DUD-E
-* MUV
-* Kernie
-
-distinguish actives and decoys by IC50, if IC50 < 10^-5.5 that is a active.
-IC50 values were obtained from dose–response curves spanning inhibitor concentrations from 10 nM to 50μM
-## 1.2. Prerequisites
-
-pip3 install tensorflow-gpu==1.14.0  
-pip3 install numpy  
-pip3 install sklearn  
-
-Check whether GPU is ready?
-```
-import torch # if you have torch
-torch.cuda.is_available()
->>> True
-import tensorflow as tf # if you have tensorflow
-tf.test.is_gpu_available()
->>> True
-```
-
-## 1.3. Procedures
-
-### 1.3.1. Preprocessing
+### Data preprocessing
 
 Docking results are in /y/Fernie/kinase_project/data/DUD-E/ada/docking_pdbqt for target **ada**.
 
@@ -63,19 +23,19 @@ Docking results are in /y/Fernie/kinase_project/data/DUD-E/ada/docking_pdbqt for
    **Input:** /y/Fernie/kinase_project/data/DUD-E  
    **Output:** /y/Fernie/kinase_project/data/DUD-E.fst  
 
-### 1.3.2. Use CD-HIT to cluster the protein targets based on their sequence similarity.
 
+4. Use CD-HIT to cluster the protein targets based on their sequence similarity.
 http://weizhong-lab.ucsd.edu/cdhit-web-server/cgi-bin/index.cgi , get file *.fas.1.clstr.sorted, and rename to  XXX_clstr
-
 /y/Fernie/kinase_project/cluster_3_fold
 
 4. gen_3_clus_fold.py  
    **Description**: According to the output of CD-HIT, divide targets into 3 fold
    **Input**: python gen_3_clus_fold.py /y/Fernie/kinase_project/data/kinformation  
-   **Output**: /y/Fernie/kinase_project/cluster_3_fold/kinformation/split_files
+   **Output**: /y/Fernie/kinase_project/cluster_3_fold/kinformation/split_files  
+
         ```
-        split_files/
-        ├── test_0.taskfolders
+        split_files/  
+        ├── test_0.taskfolders  
         ├── test_1.taskfolders
         ├── test_2.taskfolders
         ├── train_0.taskfolders
@@ -90,8 +50,6 @@ http://weizhong-lab.ucsd.edu/cdhit-web-server/cgi-bin/index.cgi , get file *.fas
    **Output:** /y/Fernie/kinformation/O00444/cidi/tmp/feature_undersample.pickle
      * cidi or codi is conformation.
    
-
-### 1.3.3. Cross-validation
 
 6. gen_cross_valid_data.py  
    * **Description**: Generate cross-valiation data: 3 train_i.pickle and 3 test_i folder which for 3-fold cross-validation.  
