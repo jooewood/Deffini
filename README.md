@@ -1,4 +1,4 @@
-- [1. A deep neural-network model for structure-based virtual screening for kinases](#1-a-deep-neural-network-model-for-structure-based-virtual-screening-for-kinases)
+- [1. Deffini: A family-specific deep neural network model for structure-based virtual screening)
   - [1.1. Data](#11-data)
   - [1.2. Dependencies](#12-dependencies)
 - [2. Get all experiments command line](#2-get-all-experiments-command-line)
@@ -23,7 +23,7 @@
     - [3.6.8. Split tensor k-fold cross validation (.pt)](#368-split-tensor-k-fold-cross-validation-pt)
     - [3.6.9. Some other scripts](#369-some-other-scripts)
 
-# 1. A deep neural-network model for structure-based virtual screening for kinases
+# 1. Deffini: A family-specific deep neural network model for structure-based virtual screening
 
 ## 1.1. Data
 Located in **/y/Aurora/Fernie/data/**
