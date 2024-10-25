@@ -24,8 +24,8 @@
     - [3.6.9. Some other scripts](#369-some-other-scripts)
 
 # Deffini: A family-specific deep neural network model for structure-based virtual screening
-![alt text](image.png)
-[Paper](https://www.sciencedirect.com/science/article/abs/pii/S0010482522010319)
+
+[![alt text](image.png)]([链接URL](https://www.sciencedirect.com/science/article/abs/pii/S0010482522010319))
 ## 1.1. Data
 Located in **/y/Aurora/Fernie/data/**
 |Folder|Description|  
